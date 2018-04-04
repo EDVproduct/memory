@@ -1,5 +1,5 @@
 
-div#dib1 {
+div#dib1b {
   background-image:url("../image/dib1.svg"); 
 
 }
@@ -7,7 +7,7 @@ div#dib1 {
   background-image:url("../image/dib1.svg"); 
 
 }
- div#dib2 {
+ div#dib2b {
   background-image:url("../image/dib2.svg"); 
 
 }
@@ -15,7 +15,7 @@ div#dib2a {
   background-image:url("../image/dib2.svg"); 
 
 }
-div#dib3 {
+div#dib3b {
   background-image:url("../image/dib3.svg"); 
 
 }
@@ -23,7 +23,7 @@ div#dib3 {
   background-image:url("../image/dib3.svg"); 
 
 }
-div#dib4{
+div#dib4b{
   background-image:url("../image/dib4.svg"); 
 
 }
@@ -31,7 +31,7 @@ div#dib4{
   background-image:url("../image/dib4.svg"); 
 
 }
- div#dib5 {
+ div#dib5b {
   background-image:url("../image/dib5.svg"); 
 
 }
@@ -39,7 +39,7 @@ div#dib4{
   background-image:url("../image/dib5.svg"); 
 
 }
- div#dib6 {
+ div#dib6b {
   background-image:url("../image/dib6.svg"); 
 
 }
@@ -47,7 +47,7 @@ div#dib4{
   background-image:url("../image/dib6.svg"); 
 
 }
- div#dib7 {
+ div#dib7b {
   background-image:url("../image/dib7.svg"); 
 
 }
@@ -55,13 +55,23 @@ div#dib4{
   background-image:url("../image/dib7.svg"); 
 
 }
- div#dib8 {
+ div#dib8b {
   background-image:url("../image/dib8.svg"); 
 
 }
  div#dib8a {
   background-image:url("../image/dib8.svg"); 
 
+}
+.container-fluid {
+  width: 60%;
+  height:auto;
+display:block;
+margin-left: auto;
+margin-right: auto;
+-webkit-box-shadow:0px 19px 47px 30px #8b8a8a ,0px 0px 100px 17px #b7ba9a inset;
+-moz-box-shadow:0px 19px 47px 30px #8b8a8a ,0px 0px 100px 17px #b7ba9a inset;
+box-shadow:0px 19px 47px 30px #8b8a8a ,0px 0px 100px 17px #b7ba9a inset;
 }
 .try {
   width:150px;
@@ -74,9 +84,9 @@ div#dib4{
   margin: 0 auto;
 }
 .game {
-  width:70%;
+  width:50%;
   height:auto;
-
+background-color:red;
 }
 
 .cards-box { 
@@ -114,7 +124,7 @@ width:150px;
 height: 150px;
   transform: rotateY( 180deg );
 }
-.card.flip:hover {
+.card.flip {
   transform: rotateY( 180deg );
 }
 .hide {
