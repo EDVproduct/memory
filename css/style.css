@@ -84,8 +84,7 @@ div#dib4b{
 .finalpanel { 
   text-align: center;
   position: relative;
-  
-  }
+    }
 .finalpanel {
   position: relative;
   display: inline-block;
@@ -229,6 +228,9 @@ height: 120px;
 font-family: 'Cabin', sans-serif;
 text-decoration: none;
 }
-a.dedicated {
- all: unset;
+#star1,#star2,#star3 {
+ font-size:48px;
+}
+.colored {
+  color: #f9aa00;
 }

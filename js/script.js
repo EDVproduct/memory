@@ -17,6 +17,9 @@
  const scoreCounter = document.querySelector('.score');
  const finalTurn = document.querySelector('.finalturn');
  const finalScore = document.querySelector('.finalscore');
+ const finalStars = document.querySelector('.stars');
+ const finalStar = document.querySelector('.star');
+ const myStars=document.querySelector('.colored')
  const finalMin = document.querySelector('.finalmin');
  const finalSec = document.querySelector('.finalsec');
  const finalPanel = document.querySelector('.finalpanel')
@@ -30,6 +33,9 @@
  let newClass = [];
  let reply_click = [];
  let turn;
+ const starOne = document.querySelector('#star1');
+ const starTwo = document.querySelector('#star2');
+ const starThree = document.querySelector('#star3');
 
  init();
  // Initializing function
@@ -125,6 +131,13 @@
       function stopTime() {
     clearInterval(time);
   }
+  function starRate(){
+    if (turnCount > 20){
+      starTwo.classList.remove('colored');
+    } else if (turnCount > 15){
+      starThree.classList.remove('colored');
+    }
+  }
      if (clicks.length === 2) {
          // If the clicked elements are equal, 
          if (clicks[0].slice(0, -1) === clicks[1].slice(0, -1)) {
@@ -135,6 +148,7 @@
              // scoreCount keep track of how many points player made. Each time two cards match, it sums 10 (final score is 80)
              scoreCount += 50;
              turnCount++;
+             starRate();
              
                   if (scoreCount === 400) {
                  
@@ -145,6 +159,7 @@
               finalScore.innerText = "score" + scoreCount;
               finalMin.innerText = "0:" + min;
               finalSec.innerText = sec;
+              starScore();
               winner.classList.remove('hide');
                  stopTime();         
             }, 500);
@@ -159,9 +174,19 @@
                  secondClicked.parentElement.classList.remove('flip');
              }, 1200);
              turnCount++;
+             starRate();
          }
      }
      turnCounter.innerText = turnCount;
      scoreCounter.innerText = scoreCount;
-  
+   function starScore(){
+    starRate();
+    for (k=0;k<myStars.length;k++){
+        finalStar.classList.add('colored');
+    }
+    
+    
+    console.log(myStars);
+    console.log(finalStars);
+  }
  });

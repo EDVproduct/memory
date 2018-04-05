@@ -7,13 +7,17 @@
         </title>
         <meta content="memory game" name="description">
         <link href="css/style.css" rel="stylesheet"><!--<link href="css/cards.css" rel="stylesheet">-->
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
         </script>
     </head>
     <body>
         <header class="info">
-            <h2 id="moves">
+            <div> <section class="stars">
+              <span id="star1" class="colored"><i class="fa fa-diamond"></i></span>
+              <span id="star2" class="colored"><i class="fa fa-diamond"></i></span>
+              <span id="star3" class="colored"><i class="fa fa-diamond"></i></span>
+            </section><h2 id="moves">
                 Moves: <span class="turn">0</span>
             </h2>
             <h2 id="score">
@@ -22,7 +26,7 @@
             <h2 id="time">
                 Time:<span class="min">00</span>:<span class="sec">00</span>
             </h2></div>
-            <button class="newGame" id="play">PLAY</button>
+            <button class="newGame" id="play">NEW GAME</button>
         </header>
         <div class="deco">
             <h1 class="cap">
@@ -42,6 +46,12 @@
                 <h2 class="finals">Your finalscore<span class="finalscore"></span></h2>
                 <h2 class="finals">in:<span class="finalturn"></span> moves!</h2>
                 <h2 class="winner cap3 hide">You do remeber !!! Well done </h2>
+                <section >
+                    <span class="star"><i class="fa fa-diamond"></i></span>
+                    <span class="star"><i class="fa fa-diamond"></i></span>
+                    <span class="star"><i class="fa fa-diamond"></i></span>
+                </section>
+          
             </div>
         
         <div class="container" id="game">
