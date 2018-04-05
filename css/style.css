@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 @import url('https://fonts.googleapis.com/css?family=Cabin');
+
+@media (min-width: 600px) {
+  .deco {
+     padding-right: 100px;
+  }
+}
+@media (min-width: 900px) {
+  .info {
+     padding-left: 5%;
+  }
+  .deco {
+     padding-right: 300px;
+  }
+}
 div#dib1b {
   background-image:url("../image/dib1.svg"); 
 
@@ -64,16 +78,36 @@ div#dib4b{
   background-image:url("../image/dib8.svg"); 
 
 }
-
+.hide {
+  display: none;
+}
+.finalpanel { 
+  text-align: center;
+  position: relative;
+  
+  }
+.finalpanel {
+  position: relative;
+  display: inline-block;
+  border: 1px double #000;
+  background-color: #e3d6bf;
+  position: absolute;
+  z-index: 1;
+  padding: 50px;
+  visibility: hidden;
+}
 .cap {
 position:absolute;
 font-family: 'Courgette', cursive;
 font-size: 64px; 
-color: #896427; 
+color: #fffee0; 
 margin:30px;
 }
 .cap2 {
 position:absolute;
+font-family: 'Courgette', cursive;
+}
+.cap3 {
 font-family: 'Courgette', cursive;
 }
 .info {
@@ -85,14 +119,49 @@ font-family: 'Courgette', cursive;
   padding:25px;
   margin-top: 100px;
   float: right;
-  padding-right: 30%;
+  padding-right: 10%;
 }
 .fant {
   filter: grayscale(50%) sepia(0.74) opacity(0.69);
 -webkit-filter: grayscale(50%) sepia(0.74) opacity(0.69);
 }
+
+
+button {
+  background: #f51616;
+  background-image: -webkit-linear-gradient(top, #f51616, #f0ebe2);
+  background-image: -moz-linear-gradient(top, #f51616, #f0ebe2);
+  background-image: -ms-linear-gradient(top, #f51616, #f0ebe2);
+  background-image: -o-linear-gradient(top, #f51616, #f0ebe2);
+  background-image: linear-gradient(to bottom, #f51616, #f0ebe2);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  text-shadow: 0px 1px 3px #db271b;
+  -webkit-box-shadow: 1px 8px 3px #666666;
+  -moz-box-shadow: 1px 8px 3px #666666;
+  box-shadow: 1px 8px 3px #666666;
+  font-family: Arial;
+  color: #171515;
+  font-size: 19px;
+  padding: 21px 16px 26px 15px;
+  border: solid #0a0909 2px;
+  text-decoration: none;
+}
+
+
+button:hover {
+  background: #dce3e8;
+  background-image: -webkit-linear-gradient(top, #dce3e8, #f5a1a1);
+  background-image: -moz-linear-gradient(top, #dce3e8, #f5a1a1);
+  background-image: -ms-linear-gradient(top, #dce3e8, #f5a1a1);
+  background-image: -o-linear-gradient(top, #dce3e8, #f5a1a1);
+  background-image: linear-gradient(to bottom, #dce3e8, #f5a1a1);
+  text-decoration: none;
+}
+ 
 .container-fluid {
- width: 650px;
+ max-width: 650px;
 height:auto;
 display:block;
 margin-top: 100px;
