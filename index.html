@@ -1,62 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>
-            Memory-Udacity project 3
-        </title>
-        <meta content="memory game" name="description">
-        <link href="css/style.css" rel="stylesheet"><!--<link href="css/cards.css" rel="stylesheet">-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-        </script>
-    </head>
-    <body>
-        <header class="info"><ul class="scoremenu"><li class="menu"><section class="stars">
-              <span id="star1" class="colored"><i class="fa fa-diamond"></i></span>
-              <span id="star2" class="colored"><i class="fa fa-diamond"></i></span>
-              <span id="star3" class="colored"><i class="fa fa-diamond"></i></span>
-            </section></li><li class="menu"><h2 id="moves">
-                Moves: <span class="turn">0</span>
-            </h2></li><li class="menu"><h2 id="score">
-                Score:<span class="score">0</span>
-            </h2></li><li class="menu"><h2 id="time">
-                Time:<span class="min">00</span>:<span class="sec">00</span>
-            </h2></li>
-           
-            
-            </ul>
-           
-        </header>
-        <div class="deco">
-            <h1 class="cap">
-                Memory
-            </h1>
-            <h3 class="cap2">
-                do you remember?
-            </h3>
-            <figure >
-                <img class="fantsize fant" src="image/img_1.jpg">
-                <figcaption>
-                    Do you remeber?
-                </figcaption>
-            </figure>
-            <div class="finalpanel hide">
-                <h2 class="finals">Time: <span class="finalmin"> </span>:<span class="finalsec"></span></h2>
-                <h2 class="finals">Your finalscore<span class="finalscore"></span></h2>
-                <h2 class="finals">in:<span class="finalturn"></span> moves!</h2>
-                <h2 class="winner cap3 hide">You do remeber !!! Well done </h2>
-                <section ><h2>Your final starscore:</h2>
-                    <span id="stara"><i class="fa fa-diamond"></i></span>
-                    <span id="starb"><i class="fa fa-diamond"></i></span>
-                    <span id="starc"><i class="fa fa-diamond"></i></span>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>
+        Memory-Udacity project 3
+    </title>
+    <meta content="memory game" name="description">
+    <link href="css/style.css" rel="stylesheet">
+    <!--<link href="css/cards.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <header class="info">
+        <ul class="scoremenu">
+            <li class="menu">
+                <section class="stars">
+                    <span id="star1" class="colored"><i class="fa fa-diamond"></i></span>
+                    <span id="star2" class="colored"><i class="fa fa-diamond"></i></span>
+                    <span id="star3" class="colored"><i class="fa fa-diamond"></i></span>
                 </section>
-           <button class="newGame" id="play">NEW GAME</button>
-            </div>
-        
+            </li>
+            <li class="menu">
+                <h2 id="moves">
+                    Moves: <span class="turn">0</span>
+                </h2>
+            </li>
+            <li class="menu">
+                <h2 id="score">
+                    Score:<span class="score">0</span>
+                </h2>
+            </li>
+            <li class="menu">
+                <h2 id="time">
+                    Time:<span class="min">00</span>:<span class="sec">00</span>
+                </h2>
+            </li>
+
+
+        </ul>
+
+    </header>
+    <div class="deco">
+        <h1 class="cap">
+            Memory
+        </h1>
+        <h3 class="cap2">
+            do you remember?
+        </h3>
+        <figure>
+            <img class="fantsize fant" src="image/img_1.jpg">
+            <figcaption>
+                Do you remeber?
+            </figcaption>
+        </figure>
+        <div class="finalpanel hide">
+            <h2 class="finals">Time: <span class="finalmin"> </span>:<span class="finalsec"></span></h2>
+            <h2 class="finals">Your finalscore<span class="finalscore"></span></h2>
+            <h2 class="finals">in:<span class="finalturn"></span> moves!</h2>
+            <h2 class="winner cap3 hide">You do remeber !!! Well done </h2>
+            <section>
+                <h2>Your final starscore:</h2>
+                <span id="stara"><i class="fa fa-diamond"></i></span>
+                <span id="starb"><i class="fa fa-diamond"></i></span>
+                <span id="starc"><i class="fa fa-diamond"></i></span>
+            </section>
+            <button class="newGame" id="play">NEW GAME</button>
+        </div>
+
         <div class="container" id="game">
-            <div class="container-fluid"><!--fila 1-->
+            <div class="container-fluid">
+                <!--fila 1-->
                 <div class="row">
                     <section class="cards-box">
                         <div class="card" id="a1">
@@ -82,7 +97,8 @@
                             <div class="back"></div>
                         </div>
                     </section>
-                </div><!--<div class="back" id="ba1"></div>
+                </div>
+                <!--<div class="back" id="ba1"></div>
                         <div class=""card""></div>
                         <div class="back" id="ba2"></div>
                         <div class=""card"s" id="a2"></div>
@@ -174,11 +190,13 @@
             </div>
             <footer>
                 <div class="dedicated">
-                    Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank" title="Creative Commons BY 3.0">CC 3.0 BY</a>
+                    Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank"
+                        title="Creative Commons BY 3.0">CC 3.0 BY</a>
                 </div>
             </footer>
             <script src="js/script.js">
-            </script> 
+            </script>
         </div>
-    </body>
+</body>
+
 </html>
