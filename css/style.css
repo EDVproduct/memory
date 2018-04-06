@@ -203,10 +203,12 @@ font-family: 'Courgette', cursive;
 }
 
 .fant {
-  filter: grayscale(50%) sepia(0.74) opacity(0.69);
--webkit-filter: grayscale(50%) sepia(0.74) opacity(0.69);
+  filter: grayscale(50%) sepia(0.74) opacity(0.40);
+-webkit-filter: grayscale(50%) sepia(0.74) opacity(0.40);
 }
-
+figcaption {
+  color:#7c6e56;
+}
 
 button {
   background: #f51616;
@@ -284,8 +286,12 @@ padding-right:35px;
 .dedicated {
   margin-top: 50px;
 font-family: 'Cabin', sans-serif;
-text-decoration: none;
+color: #7c6e56;
 }
+a:-webkit-any-link {
+text-decoration: none;
+color : #7c6e56;
+  }
 #star1,#star2,#star3 {
  font-size:48px;
 }
