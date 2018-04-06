@@ -5,6 +5,12 @@
  let shuffledCards = []; //array vacio para cartas barrehadas
  let firstClicked;
  let secondClicked;
+const cardBox = document.querySelector('.card');
+ let clickedCard;
+ let clicks = [];
+ let figure = document.querySelector('.back');
+let turn;
+ //points and clock variables
  let startMove = 0;
  let scoreCount = 0;
  let turnCount = 0;
@@ -19,23 +25,22 @@
  const finalScore = document.querySelector('.finalscore');
  const finalStars = document.querySelector('.stars');
  const finalStar = document.querySelector('.star');
- const myStars=document.querySelector('.colored')
+ 
  const finalMin = document.querySelector('.finalmin');
  const finalSec = document.querySelector('.finalsec');
  const finalPanel = document.querySelector('.finalpanel')
- const cardBox = document.querySelector('.card');
- let clickedCard;
- let clicks = [];
- let figure = document.querySelector('.back');
- const newGame = document.querySelector('.newGame');
-  const stopTimer = document.querySelector('.timer');
+ const stopTimer = document.querySelector('.timer');
  const winner = document.querySelector('.winner');
- let newClass = [];
- let reply_click = [];
- let turn;
+ const newGame = document.querySelector('.newGame');
+ 
+ const myStars=document.querySelector('.colored');
  const starOne = document.querySelector('#star1');
  const starTwo = document.querySelector('#star2');
  const starThree = document.querySelector('#star3');
+ const starA = document.querySelector('#stara');
+ const starB = document.querySelector('#starb');
+ const starC = document.querySelector('#starc');
+
 
  init();
  // Initializing function
@@ -80,8 +85,7 @@
  // Comparing cards
  function compareCards() {
      cardsUpdate();
-     firstClicked.classList.add('face');
-     secondClicked.classList.add('face');
+    
      clicks = [];
  }
  document.addEventListener('click', function(e) {
@@ -155,8 +159,8 @@
                 setTimeout(function(){
                      finalPanel.classList.remove('hide');
                      finalPanel.style.visibility = 'visible';
-              finalTurn.innerText = "movements:" + turnCount;
-              finalScore.innerText = "score" + scoreCount;
+              finalTurn.innerText =  turnCount;
+              finalScore.innerText = scoreCount;
               finalMin.innerText = "0:" + min;
               finalSec.innerText = sec;
               starScore();
@@ -181,12 +185,16 @@
      scoreCounter.innerText = scoreCount;
    function starScore(){
     starRate();
-    for (k=0;k<myStars.length;k++){
-        finalStar.classList.add('colored');
+    var mySta=document.getElementsByClassName('colored');
+    if (starOne.classList.contains('colored')){
+        starA.classList.add('colored');
     }
+    if (starTwo.classList.contains('colored')){
+        starB.classList.add('colored');}
+
+    if (starThree.classList.contains('colored')){
+        starC.classList.add('colored');}
     
     
-    console.log(myStars);
-    console.log(finalStars);
   }
  });

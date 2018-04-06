@@ -1,18 +1,105 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 @import url('https://fonts.googleapis.com/css?family=Cabin');
 
-@media (min-width: 600px) {
-  .deco {
-     padding-right: 100px;
+@media screen and (max-width: 499px) {
+  .fantsize {
+    max-width: 300px;
   }
+  .deco {
+
+  margin-top: 100px;
+  float: right;
+  }
+.cards-box { 
+  margin: 5px;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  perspective: 800px;
 }
-@media (min-width: 900px) {
-  .info {
-     padding-left: 5%;
+.card {
+ margin: 5px;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  -webkit-box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
+-moz-box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
+box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
+}
+.back {
+margin: 5px;
+width:75px;
+height: 75px;
+}
+}
+
+@media screen and (min-width:500px) and (max-width: 999px) {
+  .fantsize {
+    max-width: 400px;
   }
   .deco {
-     padding-right: 300px;
-  }
+
+  margin-top: 100px;
+  float: right;
+  padding-right: 10%;
+}
+.cards-box { 
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  perspective: 800px;
+}
+.card {
+ margin: 5px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  -webkit-box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
+-moz-box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
+box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
+}
+.back {
+margin: 5px;
+width:100px;
+height: 100px;
+}
+}
+@media screen and (min-width: 1000px) {
+
+  .deco {
+  padding:25px;
+  margin-top: 100px;
+  float: right;
+  padding-right: 30%;
+}
+  .cards-box { 
+  margin: 5px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  perspective: 800px;
+}
+.card {
+ margin: 5px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  -webkit-box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
+-moz-box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
+box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
+}
+.back {
+margin: 5px;
+width: 150px;
+height: 150px;
+}
 }
 div#dib1b {
   background-image:url("../image/dib1.svg"); 
@@ -99,7 +186,7 @@ div#dib4b{
 position:absolute;
 font-family: 'Courgette', cursive;
 font-size: 64px; 
-color: #fffee0; 
+color: #908b80; 
 margin:30px;
 }
 .cap2 {
@@ -114,12 +201,7 @@ font-family: 'Courgette', cursive;
   font-family: 'Cabin', sans-serif;
   color :#7c6e56;
 }
-.deco {
-  padding:25px;
-  margin-top: 100px;
-  float: right;
-  padding-right: 10%;
-}
+
 .fant {
   filter: grayscale(50%) sepia(0.74) opacity(0.69);
 -webkit-filter: grayscale(50%) sepia(0.74) opacity(0.69);
@@ -160,9 +242,9 @@ button:hover {
 }
  
 .container-fluid {
- max-width: 650px;
+
 height:auto;
-display:block;
+
 margin-top: 100px;
 margin-left: auto;
 margin-right: auto;
@@ -176,33 +258,11 @@ padding-right:35px;
 .row {
   width:100%;
   display: flex;
-  justify-content: space-between;
   margin: 0 auto;
 }
 
-
-
-.cards-box { 
-  margin: 10px;
-  width: 200px;
-  height: 200px;
-  position: relative;
-  perspective: 800px;
-}
-
-.card {
- margin: 10px;
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-  -webkit-box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
--moz-box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
-box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
-}
 .card div {
-  margin: 10px;
+ 
   display: block;
   position: absolute;
   width: 100%;
@@ -215,9 +275,7 @@ box-shadow:0px 0px 67px 4px #908989 ,0px 0px 7px 6px #b7ba9a inset;
 }
 
 .card .back {
-   margin: 10px;
-width:120px;
-height: 120px;
+  
   transform: rotateY( 180deg );
 }
 .card.flip {
@@ -233,4 +291,15 @@ text-decoration: none;
 }
 .colored {
   color: #f9aa00;
+}
+.scoremenu {
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.menu {
+  float: left;
+  display: block;
+  padding-right: 10px;
 }

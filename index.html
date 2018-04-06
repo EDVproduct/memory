@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>
             Memory-Udacity project 3
         </title>
@@ -12,21 +13,21 @@
         </script>
     </head>
     <body>
-        <header class="info">
-            <div> <section class="stars">
+        <header class="info"><ul class="scoremenu"><li class="menu"><section class="stars">
               <span id="star1" class="colored"><i class="fa fa-diamond"></i></span>
               <span id="star2" class="colored"><i class="fa fa-diamond"></i></span>
               <span id="star3" class="colored"><i class="fa fa-diamond"></i></span>
-            </section><h2 id="moves">
+            </section></li><li class="menu"><h2 id="moves">
                 Moves: <span class="turn">0</span>
-            </h2>
-            <h2 id="score">
+            </h2></li><li class="menu"><h2 id="score">
                 Score:<span class="score">0</span>
-            </h2>
-            <h2 id="time">
+            </h2></li><li class="menu"><h2 id="time">
                 Time:<span class="min">00</span>:<span class="sec">00</span>
-            </h2></div>
-            <button class="newGame" id="play">NEW GAME</button>
+            </h2></li>
+           
+            
+            </ul>
+           
         </header>
         <div class="deco">
             <h1 class="cap">
@@ -36,7 +37,7 @@
                 do you remember?
             </h3>
             <figure class="fant">
-                <img src="image/img_1.jpg">
+                <img class="fantsize" src="image/img_1.jpg">
                 <figcaption>
                     Do you remeber?
                 </figcaption>
@@ -46,12 +47,12 @@
                 <h2 class="finals">Your finalscore<span class="finalscore"></span></h2>
                 <h2 class="finals">in:<span class="finalturn"></span> moves!</h2>
                 <h2 class="winner cap3 hide">You do remeber !!! Well done </h2>
-                <section >
-                    <span class="star"><i class="fa fa-diamond"></i></span>
-                    <span class="star"><i class="fa fa-diamond"></i></span>
-                    <span class="star"><i class="fa fa-diamond"></i></span>
+                <section ><h2>Your final starscore:</h2>
+                    <span id="stara"><i class="fa fa-diamond"></i></span>
+                    <span id="starb"><i class="fa fa-diamond"></i></span>
+                    <span id="starc"><i class="fa fa-diamond"></i></span>
                 </section>
-          
+           <button class="newGame" id="play">NEW GAME</button>
             </div>
         
         <div class="container" id="game">
