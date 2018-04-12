@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -23,25 +26,25 @@
                 </section>
             </li>
             <li class="menu">
-                <h2 id="moves">
-                    Moves: <span class="turn">0</span>
-                </h2>
+                <h5 id="moves">
+                    MOVES: <span class="turn">0</span>
+                </h5>
             </li>
+            
             <li class="menu">
-                <h2 id="score">
-                    Score:<span class="score">0</span>
-                </h2>
+                <h5 id="score">
+                    SCORE:<span class="score">0</span>
+                </h5>
             </li>
-            <li class="menu">
-                <h2 id="time">
-                    Time:<span class="min">00</span>:<span class="sec">00</span>
-                </h2>
+            <li class="menu"><h5 id="time">
+                    TIME:<span id="min">0</span>:<span id="sec">0</span>
+                </h5>
             </li>
-
-
+            
         </ul>
 
     </header>
+       
     <div class="deco">
         <h1 class="cap">
             Memory
@@ -54,9 +57,17 @@
             <figcaption>
                 Do you remeber?
             </figcaption>
-        </figure>
+        </figure> 
+        <section class="buts">
+                <button class="timecontrol" id="start">Start timer</button>                
+                <button class="timecontrol disabled" id="stop">Stop timer</button>
+                <button class="timecontrol" id="reset">Reset timer</button>
+                <button class="newGame" >NEW GAME</button>
+        </section> 
+    </div>
         <div class="finalpanel hide">
-            <h2 class="finals">Time: <span class="finalmin"> </span>:<span class="finalsec"></span></h2>
+            <p id="demo"></p>
+            <!--<h2 class="finals">Time: <span class="finalmin"> </span>:<span class="finalsec"></span></h2>-->
             <h2 class="finals">Your finalscore<span class="finalscore"></span></h2>
             <h2 class="finals">in:<span class="finalturn"></span> moves!</h2>
             <h2 class="winner cap3 hide">You do remeber !!! Well done </h2>
@@ -68,7 +79,7 @@
             </section>
             <button class="newGame" id="play">NEW GAME</button>
         </div>
-
+<h2 class="loser cap3 hide">You don't remeber ? your time is over </h2>
         <div class="container" id="game">
             <div class="container-fluid">
                 <!--fila 1-->
@@ -98,15 +109,6 @@
                         </div>
                     </section>
                 </div>
-                <!--<div class="back" id="ba1"></div>
-                        <div class=""card""></div>
-                        <div class="back" id="ba2"></div>
-                        <div class=""card"s" id="a2"></div>
-                        <div class="back" id="ba3"></div>
-                        <div class=""card"s" id="a3"></div>
-                        <div class="back" id="ba4"></div>
-                        <div class=""card"s" id="a4"></div>-->
-                <!--fila2-->
                 <div class="row">
                     <section class="cards-box">
                         <div class="card" id="b1">
@@ -188,6 +190,7 @@
                     </section>
                 </div>
             </div>
+        </div>
             <footer>
                 <div class="dedicated">
                     Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank"

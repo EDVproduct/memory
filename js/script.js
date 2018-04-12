@@ -14,23 +14,18 @@
  let startMove = 0;
  let scoreCount = 0;
  let turnCount = 0;
- let sec = 0;
- let min = 0;
- let time;
- const secText = document.querySelector('.sec');
- const minText = document.querySelector('.min');
  const turnCounter = document.querySelector('.turn');
  const scoreCounter = document.querySelector('.score');
  const finalTurn = document.querySelector('.finalturn');
  const finalScore = document.querySelector('.finalscore');
  const finalStars = document.querySelector('.stars');
  const finalStar = document.querySelector('.star');
- const finalMin = document.querySelector('.finalmin');
- const finalSec = document.querySelector('.finalsec');
  const finalPanel = document.querySelector('.finalpanel')
  const stopTimer = document.querySelector('.timer');
  const winner = document.querySelector('.winner');
+ const loser = document.querySelector('.loser');
  const newGame = document.querySelector('.newGame');
+ const newStart = document.querySelector('#newStart');
  const myStars = document.querySelector('.colored');
  const starOne = document.querySelector('#star1');
  const starTwo = document.querySelector('#star2');
@@ -43,14 +38,80 @@
  init();
  // Initializing function
  function init() {
-     turnCount = 0;
-     scoreCount = 0;
-     turnCounter.innerText = 0;
-     scoreCounter.innerText = scoreCount;
-     control = [];
+
+    turnCount = 0;
+    scoreCount = 0;
+    let sec = 0;
+    let min = 0;
+    turnCounter.innerText = 0;
+    scoreCounter.innerText = scoreCount;
+    control = [];
      //starting the shuffle function
  }
+start = document.getElementById("start"),
+start.addEventListener("click", function(){
+  // start counting
+  })
+function trigger(){
+  if(start.disabled) {
+      /* start button will be disabled once it's clicked */
+      start.disabled = false;
+      stop.disabled = true;
+  } else {
+      start.disabled = true;
+      stop.disabled = false;
+  }
+};
+/*stopwatch*/
+ var counter,
+    time = 900,
+        sec = document.getElementById("sec"),
+        min = document.getElementById("min"),
+        start = document.getElementById("start"),
+        reset = document.getElementById("reset"),
+        stop = document.getElementById("stop");
 
+    start.addEventListener("click", function () {
+        toggle();
+        counter = setInterval(count, 1000);
+    });
+
+    stop.addEventListener("click", function () {
+        toggle();
+        clearInterval(counter);
+         loser.style.visibility = 'hidden';
+    });
+
+    reset.addEventListener("click", function () {
+        time = 900;
+        sec.innerHTML = time % 60;
+        min.innerHTML = Math.floor(time / 60);
+        loser.style.visibility = 'hidden';
+    });
+
+    function count() {
+        if (time === 0) {
+            sec.innerHTML = 0;
+            min.innerHTML = 0;
+            toggle();
+            clearInterval(counter);
+             loser.style.visibility = 'visible';
+        } else {
+            time--;
+            sec.innerHTML = time % 60;
+            min.innerHTML = Math.floor(time / 60);
+        }
+    }
+
+    function toggle() {
+        if (start.disabled) {
+            start.disabled = false;
+            stop.disabled = true;
+        } else {
+            start.disabled = true;
+            stop.disabled = false
+        }
+    };
  function shuffle(memoryId) {
      for (let i = 0; i < memoryId.length; i++) {
          const j = Math.floor(Math.random() * (i + 1));
@@ -73,28 +134,37 @@
  }
  newGame.addEventListener('click', function() {
      location.reload();
+     clearInterval(sec);
  });
-
  /*first and second clicks detected  */
  function cardsUpdate() {
      firstClicked = document.querySelector(`#${clicks[0]}`);
      secondClicked = document.querySelector(`#${clicks[1]}`);
+     //if 3 cards will be turned
+     if (clicks[2]){clickedCard.parentElement.classList.remove('clicked');clickedCard.parentElement.classList.remove('flip');
+ }
  }
  // Comparing cards
  function compareCards() {
      cardsUpdate();
-
+ firstClicked.classList.add('front');
+    secondClicked.classList.add('front');
      clicks = [];
  }
- document.addEventListener('click', function(e) {
+ document.addEventListener('click', function(e) { 
      clickedCard = e.target;
-     let startMove = 0;
+     let startMove = 0; 
+
      if (clickedCard.classList.contains('front')) {
          clickedCard.parentElement.classList.add('clicked');
          startMove++;
          if (startMove === 1) {
-             startCronometer();
-         }
+        counter = setInterval(count, 1000);
+        }
+       
+
+
+
          if (clickedCard.parentElement.classList.contains('clicked')) {
              clickedCard.parentElement.classList.add('flip');
          }
@@ -103,36 +173,7 @@
          clicks.push(result);
      }
 
-     function startCronometer() {
-         time = setInterval(function() {
-             if (sec < 59) {
-                 sec++;
-                 if (sec < 10) {
-                     secText.innerText = '0' + sec;
-                 } else {
-                     secText.innerText = sec;
-                 }
-             } else if (sec >= 59) {
-                 min++;
-                 sec = 0;
-                 if (min < 10) {
-                     minText.innerText = '0' + min;
-                     secText.innerText = '0' + sec;
-                 } else {
-                     minText.innerText = min;
-                     secText.innerText = sec;
-                 }
-             }
-             if (min === 60) {
-                 alert('Time over!');
-                 location.reload();
-             }
-         }, 1000);
-     }
-
-     function stopTime() {
-         clearInterval(time);
-     }
+   
 
      function starRate() {
          if (turnCount > 20) {
@@ -144,7 +185,11 @@
      if (clicks.length === 2) {
          // If the clicked elements are equal, 
          if (clicks[0].slice(0, -1) === clicks[1].slice(0, -1)) {
-             cardBox.classList.remove('clicked');
+        cardBox.classList.remove('clicked');
+             setTimeout(function(){
+            cardBox.classList.add('clicked');
+          }, 1200);
+           
              control.push(clicks[0]);
              control.push(clicks[1]);
              clicks = [];
@@ -160,12 +205,12 @@
                      finalPanel.style.visibility = 'visible';
                      finalTurn.innerText = turnCount;
                      finalScore.innerText = scoreCount;
-                     finalMin.innerText = "0:" + min;
-                     finalSec.innerText = sec;
                      starScore();
                      winner.classList.remove('hide');
-                     stopTime();
-                 }, 500);
+                      toggle();                      
+        clearInterval(counter);
+        loser.style.visibility = 'hidden';
+                 }, 600);
              }
              // when cards does not match, cardsUpdate update the element assigned in the DOM. Below, compareCards(); make sure they are not equal and inser .front class back
          } else if (control.indexOf(clickedCard.id) < 0) {
@@ -180,6 +225,7 @@
              starRate();
          }
      }
+
      turnCounter.innerText = turnCount;
      scoreCounter.innerText = scoreCount;
 
