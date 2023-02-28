@@ -1,6 +1,4 @@
-<div id="showtm" style="font-size:21px; font-weight:800;">0:0</div>
-<script type="text/javascript"><!--
-// chronometer / stopwatch JS script - coursesweb.net
+//chronometer / stopwatch JS script - coursesweb.net
 
 // Here set the minutes, seconds, and tenths-of-second when you want the chronometer to stop
 // If all these values are set to 0, the chronometer not stop automatically
@@ -54,4 +52,3 @@ function resetChr() {
 
 // start the chronometer, delete this line if you want to not automatically start the stopwatch
 startChr();
--->

@@ -352,3 +352,7 @@ a:-webkit-any-link {
   text-decoration: none;
   color : #7c6e56;
 }
+#game{
+  max-width: 800px;
+  margin:auto;
+}
